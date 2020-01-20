@@ -19,7 +19,7 @@
   </p>
 
   <div>
-    <%= @spell.description.html_safe %>
+    <%= substitute_links(@spell.description).html_safe %>
   </div>
 
   <p>Available to <%= @spell.classes %></p>
