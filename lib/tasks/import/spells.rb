@@ -97,6 +97,14 @@ def format_description(s, name)
   description
 end
 
+def get_classes(classes)
+  result = []
+  classes['fromClassList'].each do |klass|
+    result << klass['name'] if klass['source'] == "PHB"
+  end
+  result.join(", ")
+end
+
 doc = File.open(spell_file)
 formatted = TextSubstitution.format(doc.read)
 parsed = JSON.parse(formatted)
@@ -122,5 +130,6 @@ spells.each do |s|
   ritual = s['meta']['ritual'] if s['meta']
   spell.ritual = ritual
   spell.description = format_description(s, spell.name)
+  spell.classes = get_classes(s['classes'])
   spell.save!
 end
