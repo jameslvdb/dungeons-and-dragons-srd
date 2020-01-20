@@ -39,53 +39,11 @@ def format_duration(duration)
   end
 end
 
-def format_tables(entry)
-  tables = ''
-  tables += "<h3>#{entry['caption']}</h3>"
-  tables += '<table><tr>'
-  entry['colLabels'].each do |header|
-    tables += "<th>#{header}</th>"
-  end
-  tables += '</tr>'
-  entry['rows'].each do |row|
-    tables += '<tr>'
-    row.each do |cell|
-      tables += "<td>#{cell}</td>"
-    end
-    tables += '</tr>'
-  end
-  tables += '</table>'
-  tables
-end
-
 def format_description(s, name)
   description = ''
   if s['entries'].length > 1
     s['entries'].each do |entry|
-      if entry.is_a?(String) # just append the string
-        description += (entry + '<br>')
-      elsif entry.is_a?(Hash)
-        # we have three types here: 'entries', 'table', 'list'
-        # process subentries
-        if entry['type'] == 'entries'
-          description += "<br><strong><em>#{entry['name']}. </em></strong>"
-          # Add a br after each subentry unless it's the last one
-          entry['entries'].each do |subentry|
-            description += subentry.to_s
-            description += '<br>' unless subentry == entry['entries'].last
-          end
-        # process lists
-        elsif entry['type'] == 'list'
-          description += '<ul>'
-          entry['items'].each do |item|
-            description += "<li>#{item}</li>"
-          end
-          description += '</ul>'
-        # process tables
-        elsif entry['type'] == 'table'
-          description += format_tables(entry)
-        end
-      end
+      description += TextSubstitution.format_entry(entry)
     end
   else
     description += s['entries'].first
