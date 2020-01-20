@@ -4,14 +4,14 @@ sacred_flame:
   name: sacred flame
   level: 0
   school: Evocation
-  casting_time: MyString
-  range: MyString
-  verbal: false
-  somatic: false
+  casting_time: 1 action
+  range: 60 feet
+  verbal: true
+  somatic: true
   material: MyString
-  duration: MyString
+  duration: Instantaneous
   description: MyString
-  source: MyString
+  source: Player's Handbook
   classes: MyString
   ritual: false
 
@@ -19,13 +19,13 @@ magic_missile:
   name: magic missile
   level: 1
   school: Evocation
-  casting_time: MyString
-  range: MyString
-  verbal: false
-  somatic: false
+  casting_time: 1 action
+  range: 120 feet
+  verbal: true
+  somatic: true
   material: MyString
-  duration: MyString
+  duration: Instantaneous
   description: MyString
-  source: MyString
+  source: Player's Handbook
   classes: MyString
   ritual: false
