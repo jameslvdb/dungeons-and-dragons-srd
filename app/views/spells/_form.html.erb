@@ -1,0 +1,82 @@
+<%= form_with(model: spell, local: true) do |form| %>
+  <% if spell.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(spell.errors.count, "error") %> prohibited this spell from being saved:</h2>
+
+      <ul>
+        <% spell.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field :level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :casting_time %>
+    <%= form.text_field :casting_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :range %>
+    <%= form.text_field :range %>
+  </div>
+
+  <div class="field">
+    <%= form.label :verbal %>
+    <%= form.check_box :verbal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :somatic %>
+    <%= form.check_box :somatic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :material %>
+    <%= form.text_field :material %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.text_field :duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_field :source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :classes %>
+    <%= form.text_field :classes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ritual %>
+    <%= form.check_box :ritual %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
