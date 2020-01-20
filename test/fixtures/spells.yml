@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  level: 1
-  school: MyString
+  name: sacred flame
+  level: 0
+  school: Evocation
   casting_time: MyString
   range: MyString
   verbal: false

@@ -13,6 +13,9 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'th', 'Level'
     assert_select 'th', 'School'
     assert_select 'th', 'Source'
+    assert_select 'td', 'Sacred Flame'
+    assert_select 'td', 'cantrip'
+    assert_select 'td', 'Evocation'
   end
 
   test "should get new" do
