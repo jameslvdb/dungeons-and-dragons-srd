@@ -1,69 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @spell.name %>
-</p>
+<!-- TODO: make small_width class -->
+<div class="small_width">
+  <h1>
+    <%= @spell.name.titleize %>
+  </h1>
 
-<p>
-  <strong>Level:</strong>
-  <%= @spell.level %>
-</p>
+  <p>
+    <%# TODO: make spell level helper %>
+    <% if @spell.level > 0 %>
+      <em><%= @spell.level.ordinalize + '-level ' + @spell.school %></em>
+    <% else %>
+      <em><%= @spell.school + ' cantrip' %></em>
+    <% end %>
+  </p>
 
-<p>
-  <strong>School:</strong>
-  <%= @spell.school %>
-</p>
+  <p>
+    <strong>Casting Time:</strong> <%= @spell.casting_time %><br>
+    <strong>Range:</strong> <%= @spell.range %><br>
+    <strong>Components:</strong>
+    <%= components(@spell) %>
+    <br>
+    <strong>Duration:</strong> <%= @spell.duration %>
+  </p>
 
-<p>
-  <strong>Casting time:</strong>
-  <%= @spell.casting_time %>
-</p>
+  <div>
+    <%= @spell.description.html_safe %>
+  </div>
 
-<p>
-  <strong>Range:</strong>
-  <%= @spell.range %>
-</p>
+  <p>Available to <%= @spell.classes %></p>
 
-<p>
-  <strong>Verbal:</strong>
-  <%= @spell.verbal %>
-</p>
+  <p>Source: <%= @spell.source %></p>
 
-<p>
-  <strong>Somatic:</strong>
-  <%= @spell.somatic %>
-</p>
+  <%= link_to 'Edit', edit_spell_path(@spell) %> |
+  <%= link_to 'Back', spells_path %>
 
-<p>
-  <strong>Material:</strong>
-  <%= @spell.material %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @spell.duration %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @spell.description %>
-</p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @spell.source %>
-</p>
-
-<p>
-  <strong>Classes:</strong>
-  <%= @spell.classes %>
-</p>
-
-<p>
-  <strong>Ritual:</strong>
-  <%= @spell.ritual %>
-</p>
-
-<%= link_to 'Edit', edit_spell_path(@spell) %> |
-<%= link_to 'Back', spells_path %>
+</div>
