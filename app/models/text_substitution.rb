@@ -1,6 +1,6 @@
 module TextSubstitution
 
-  def format(doc)
+  def self.format(doc)
     # format damage and dice notations
     doc.gsub!(/{@(damage|dice) (\d{1,2}d\d{1,3}( *\+ *)?\w*)}/) do
   	  "#{$2}"
@@ -33,7 +33,7 @@ module TextSubstitution
     doc
   end
 
-  def links(str)
+  def self.links(str)
     # use working creature links
     str.gsub!(/{@creature (\w+\s?\w*)}/) do
       crt = Creature.find_by(name: $1.downcase)
