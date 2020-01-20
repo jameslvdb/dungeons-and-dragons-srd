@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+sacred_flame:
   name: sacred flame
   level: 0
   school: Evocation
@@ -15,10 +15,10 @@ one:
   classes: MyString
   ritual: false
 
-two:
-  name: MyString
+magic_missile:
+  name: magic missile
   level: 1
-  school: MyString
+  school: Evocation
   casting_time: MyString
   range: MyString
   verbal: false

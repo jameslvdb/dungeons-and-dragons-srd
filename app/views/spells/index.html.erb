@@ -19,11 +19,7 @@
     <% @spells.each do |spell| %>
       <tr>
         <td><%= link_to spell.name.titleize, spell_path(spell) %></td>
-        <% if spell.level > 0 %>
-          <td><%= spell.level.ordinalize %></td>
-        <% else %>
-          <td>cantrip</td>
-        <% end %>
+        <td><%= ordinalize_level(spell.level) %></td>
         <td><%= spell.school.camelize %></td>
         <td><%= spell.source %></td>
         <td><%= link_to 'Show', spell %></td>

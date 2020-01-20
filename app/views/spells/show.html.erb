@@ -7,12 +7,7 @@
   </h1>
 
   <p>
-    <%# TODO: make spell level helper %>
-    <% if @spell.level > 0 %>
-      <em><%= @spell.level.ordinalize + '-level ' + @spell.school %></em>
-    <% else %>
-      <em><%= @spell.school + ' cantrip' %></em>
-    <% end %>
+    <em><%= show_spell_level(@spell) %></em>
   </p>
 
   <p>

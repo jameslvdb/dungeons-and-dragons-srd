@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SpellsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @spell = spells(:one)
+    @spell = spells(:sacred_flame)
   end
 
   test "should get index" do
@@ -32,8 +32,14 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show spell" do
-    get spell_url(@spell)
+    get spell_url(spells(:sacred_flame))
     assert_response :success
+    assert_select 'p em', 'Evocation cantrip'
+    assert_select 'p strong', 4
+
+    get spell_url(spells(:magic_missile))
+    assert_response :success
+    assert_select 'p em', '1st-level evocation'
   end
 
   test "should get edit" do
