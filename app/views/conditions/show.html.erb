@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @condition.name %>
-</p>
+<div class="small_width">
+  <h1><%= @condition.name.titleize %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @condition.description %>
-</p>
+  <p>
+    <%= sanitize substitute_links(@condition.description), tags: %w{table tr th td br a} %>
+  </p>
 
-<%= link_to 'Edit', edit_condition_path(@condition) %> |
-<%= link_to 'Back', conditions_path %>
+  <%= link_to 'Edit', edit_condition_path(@condition) %> |
+  <%= link_to 'Back', conditions_path %>
+</div>
