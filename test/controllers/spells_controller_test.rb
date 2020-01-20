@@ -8,6 +8,11 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get spells_url
     assert_response :success
+    assert_select 'h1', 'Spells'
+    assert_select 'th', 'Name'
+    assert_select 'th', 'Level'
+    assert_select 'th', 'School'
+    assert_select 'th', 'Source'
   end
 
   test "should get new" do
