@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_050522) do
+ActiveRecord::Schema.define(version: 2020_01_21_024306) do
 
   create_table "conditions", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 2020_01_20_050522) do
     t.string "source"
     t.string "classes"
     t.boolean "ritual"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "weapon_properties", force: :cascade do |t|
+    t.string "name"
+    t.string "abbreviation"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
