@@ -10,7 +10,7 @@ class ConditionTest < ActiveSupport::TestCase
 
   test "condition is not valid without a unique name" do
     condition = Condition.new(name: conditions(:deafened).name,
-                          description: "desc",)
+                          description: "desc")
     assert condition.invalid?
     assert_equal ["has already been taken"], condition.errors[:name]
   end
