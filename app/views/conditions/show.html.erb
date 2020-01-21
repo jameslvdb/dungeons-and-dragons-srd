@@ -4,7 +4,7 @@
   <h1><%= @condition.name.titleize %></h1>
 
   <p>
-    <%= sanitize substitute_links(@condition.description), tags: %w{table tr th td br a} %>
+    <%= sanitize substitute_links(@condition.description), scrubber: PermitTableScrubber.new %>
   </p>
 
   <%= link_to 'Edit', edit_condition_path(@condition) %> |

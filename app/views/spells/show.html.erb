@@ -19,6 +19,7 @@
   </p>
 
   <div>
+    <%# <%= sanitize substitute_links(@spell.description), scrubber: PermitTableScrubber.new %> %>
     <%= substitute_links(@spell.description).html_safe %>
   </div>
 
