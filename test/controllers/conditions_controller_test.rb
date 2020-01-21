@@ -22,7 +22,7 @@ class ConditionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create condition" do
     assert_difference('Condition.count') do
-      post conditions_url, params: { condition: { description: @condition.description, name: @condition.name } }
+      post conditions_url, params: { condition: { description: @condition.description, name: "some new name" } }
     end
 
     assert_redirected_to condition_url(Condition.last)
