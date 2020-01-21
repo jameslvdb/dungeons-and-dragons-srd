@@ -1,4 +1,5 @@
-"itemProperty": [
+{
+  "itemProperty": [
     {
       "abbreviation": "A",
       "source": "PHB",
@@ -181,3 +182,4 @@
       "template": "{{prop_name}} ({{item.dmg2}})"
     }
   ]
+}
