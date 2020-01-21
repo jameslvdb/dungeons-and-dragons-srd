@@ -2,12 +2,17 @@ require 'test_helper'
 
 class ConditionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @condition = conditions(:one)
+    @condition = conditions(:deafened)
   end
 
   test "should get index" do
     get conditions_url
     assert_response :success
+
+    assert_select 'h1', 'Conditions'
+    assert_select 'th', 'Name'
+    assert_select 'td', 'Deafened'
+    assert_select 'td', 'Exhaustion'
   end
 
   test "should get new" do
@@ -24,8 +29,15 @@ class ConditionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show condition" do
-    get condition_url(@condition)
+    get condition_url(conditions(:deafened))
     assert_response :success
+    assert_select 'h1', 'Deafened'
+
+    get condition_url(conditions(:exhaustion))
+    assert_response :success
+    assert_select 'h1', 'Exhaustion'
+    assert_select 'table', 1
+    assert_select 'tr', 7
   end
 
   test "should get edit" do
