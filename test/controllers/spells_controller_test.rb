@@ -25,7 +25,7 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create spell" do
     assert_difference('Spell.count') do
-      post spells_url, params: { spell: { casting_time: @spell.casting_time, classes: @spell.classes, description: @spell.description, duration: @spell.duration, level: @spell.level, material: @spell.material, name: @spell.name, range: @spell.range, ritual: @spell.ritual, school: @spell.school, somatic: @spell.somatic, source: @spell.source, verbal: @spell.verbal } }
+      post spells_url, params: { spell: { casting_time: @spell.casting_time, classes: @spell.classes, description: @spell.description, duration: @spell.duration, level: @spell.level, material: @spell.material, name: "some new spell", range: @spell.range, ritual: @spell.ritual, school: @spell.school, somatic: @spell.somatic, source: @spell.source, verbal: @spell.verbal } }
     end
 
     assert_redirected_to spell_url(Spell.last)
