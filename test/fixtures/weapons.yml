@@ -1,25 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  weapon_type: MyString
-  damage_type: MyString
-  damage: MyString
-  two_handed_damage: MyString
-  category: MyString
-  value: 1
-  weight: 1
-  range: MyString
-  description: MyString
+shortsword:
+  name: shortsword
+  weapon_type: melee
+  damage_type: piercing
+  damage: 1d6
+  two_handed_damage:
+  category: martial
+  value: 1000
+  weight: 2
+  weapon_properties: finesse, light
+  range:
+  description:
 
-two:
-  name: MyString
-  weapon_type: MyString
-  damage_type: MyString
-  damage: MyString
-  two_handed_damage: MyString
-  category: MyString
-  value: 1
-  weight: 1
-  range: MyString
-  description: MyString
+shortbow:
+  name: shortbow
+  weapon_type: ranged
+  damage_type: piercing
+  damage: 1d6
+  two_handed_damage:
+  category: simple
+  value: 2500
+  weight: 2
+  weapon_properties: reach
+  range: 80/320
+  description:
