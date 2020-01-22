@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weapons
   root 'home#index', as: 'home_index'
   resources :conditions
   resources :spells

@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  weapon_type: MyString
+  damage_type: MyString
+  damage: MyString
+  two_handed_damage: MyString
+  category: MyString
+  value: 1
+  weight: 1
+  range: MyString
+  description: MyString
+
+two:
+  name: MyString
+  weapon_type: MyString
+  damage_type: MyString
+  damage: MyString
+  two_handed_damage: MyString
+  category: MyString
+  value: 1
+  weight: 1
+  range: MyString
+  description: MyString
