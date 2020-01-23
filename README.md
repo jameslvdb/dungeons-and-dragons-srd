@@ -1,24 +1,32 @@
-# README
+# Dungeons & Dragons
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application serves as a 5th Edition Dungeons & Dragons reference application.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+### Installing Prerequisites
 
-* System dependencies
+#### Ruby
 
-* Configuration
+If you don't have a Ruby version manager, try out [rbenv](https://github.com/rbenv/rbenv)! Follow rbenv's [installation guide](https://github.com/rbenv/rbenv#installation).
 
-* Database creation
+Using rbenv, install the version of Ruby listed in the Gemfile (in this case, 2.6.4).
 
-* Database initialization
+#### Yarn
 
-* How to run the test suite
+Refer to Yarn's [installation guide](https://yarnpkg.com/en/docs/install).
 
-* Services (job queues, cache servers, search engines, etc.)
+### Installing D&D SRD
 
-* Deployment instructions
+1. Fork this repository.
+2. Clone your forked repository.
+3. Install bundler with `gem install bundler`
+4. Run `bin/setup`
 
-* ...
+## Database Initialization
+
+TODO
+
+## Testing
+
+This project uses Minitest. To run the test suite, run `bin/rails test`. 
