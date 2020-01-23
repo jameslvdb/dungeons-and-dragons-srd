@@ -9,13 +9,12 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
     get spells_url
     assert_response :success
     assert_select 'h1', 'Spells'
-    assert_select 'th', 'Name'
-    assert_select 'th', 'Level'
-    assert_select 'th', 'School'
-    assert_select 'th', 'Source'
-    assert_select 'td', 'Sacred Flame'
-    assert_select 'td', 'cantrip'
-    assert_select 'td', 'Evocation'
+
+    column_headers = %w[Name Level School Source]
+    column_headers.each do |header|
+      assert_select 'th', header
+    end
+    assert_select 'th', column_headers.length + 1
   end
 
   test "should get new" do

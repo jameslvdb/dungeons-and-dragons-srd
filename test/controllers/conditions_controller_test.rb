@@ -11,6 +11,7 @@ class ConditionsControllerTest < ActionDispatch::IntegrationTest
 
     assert_select 'h1', 'Conditions'
     assert_select 'th', 'Name'
+    # the below tests are based on fixture data
     assert_select 'td', 'Deafened'
     assert_select 'td', 'Exhaustion'
   end
@@ -33,6 +34,8 @@ class ConditionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'h1', 'Deafened'
 
+    # the exhaustion record is the complicated one to display: the below tests
+    # are my way of checking that it's rendering properly
     get condition_url(conditions(:exhaustion))
     assert_response :success
     assert_select 'h1', 'Exhaustion'
