@@ -25,3 +25,16 @@ shortbow:
   weapon_properties: reach
   range: 80/320
   description:
+
+longsword:
+  name: longsword
+  weapon_type: melee
+  damage_type: slashing
+  damage: 1d8
+  two_handed_damage: 1d10
+  category: martial
+  value: 1500
+  weight: 3
+  weapon_properties: reach
+  range:
+  description:
