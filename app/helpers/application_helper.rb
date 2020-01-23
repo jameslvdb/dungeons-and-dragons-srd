@@ -17,4 +17,13 @@ module ApplicationHelper
     end
     str
   end
+
+  def format_value(value)
+    if value % 100 == 0
+      return "#{value / 100} gp"
+    elsif value % 10 == 0
+      return "#{value / 10} sp"
+    end
+    "#{value} cp"
+  end
 end
