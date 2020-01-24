@@ -24,6 +24,7 @@ weapon_types = {
   'R' => 'ranged'
 }
 
+# split the string and multiply str[0] by cp (1), sp (10), gp (100)
 def format_value(value)
   str = value.split
   if str[1] == 'gp'
@@ -36,6 +37,23 @@ def format_value(value)
   str[0].to_i
 end
 
+def create_weapon_property_associations(weapon, w)
+  if w['property']
+    w['property'].each do |property|
+      # 'S' is a special case, don't create an association
+      if property == 'S'
+        weapon.description = w['entries'].first['entries'].first
+        next
+      end
+      if weapon.weapon_properties.where(abbreviation: property).exists?
+        weapon.weapon_properties << WeaponProperty.find_by(abbreviation: property)
+      end
+    end
+  end
+  # return the Weapon object at the end
+  weapon
+end
+
 def create_dart(w)
   weapon = Weapon.find_or_initialize_by(name: 'darts (4)')
   weapon.weapon_type = 'ranged'
@@ -45,9 +63,7 @@ def create_dart(w)
   weapon.value = 20
   weapon.weight = 1
   weapon.range = w['range']
-  w['property'].each do |property|
-    weapon.weapon_properties << WeaponProperty.find_by(abbreviation: property)
-  end
+  weapon = create_weapon_property_associations(weapon, w)
   weapon.save!
 end
 
@@ -61,19 +77,11 @@ weapons.each do |w|
   weapon.weapon_type = weapon_types[w['type']]
   weapon.damage_type = Damage::DAMAGE_TYPES[w['dmgType']]
   weapon.damage = w['dmg1']
-  weapon.two_handed_damage = w['dmg2'] # error
+  weapon.two_handed_damage = w['dmg2']
   weapon.category = w['weaponCategory'].downcase
-  weapon.value = format_value(w['value']) # split the string and multiply str[0] by cp (0), sp (10), gp (100)
+  weapon.value = format_value(w['value'])
   weapon.weight = w['weight'] || 0
   weapon.range = w['range']
-  if w['property']
-    w['property'].each do |property|
-      if property == 'S'
-        weapon.description = w['entries'].first['entries'].first
-        next
-      end
-      weapon.weapon_properties << WeaponProperty.find_by(abbreviation: property)
-    end
-  end
+  weapon = create_weapon_property_associations(weapon, w)
   weapon.save!
 end
