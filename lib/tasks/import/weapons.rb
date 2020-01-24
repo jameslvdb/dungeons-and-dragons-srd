@@ -45,7 +45,7 @@ def create_weapon_property_associations(weapon, w)
         weapon.description = w['entries'].first['entries'].first
         next
       end
-      if weapon.weapon_properties.where(abbreviation: property).exists?
+      if !weapon.weapon_properties.exists?(abbreviation: property)
         weapon.weapon_properties << WeaponProperty.find_by(abbreviation: property)
       end
     end
