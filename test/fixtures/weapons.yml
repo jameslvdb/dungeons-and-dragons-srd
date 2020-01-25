@@ -22,7 +22,7 @@ shortbow:
   category: simple
   value: 2500
   weight: 2
-  weapon_properties: reach
+  weapon_properties: ammunition
   range: 80/320
   description:
 
@@ -35,6 +35,6 @@ longsword:
   category: martial
   value: 1500
   weight: 3
-  weapon_properties: reach
+  weapon_properties: versatile
   range:
   description:

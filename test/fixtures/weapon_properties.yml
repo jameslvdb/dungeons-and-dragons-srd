@@ -10,7 +10,12 @@ light:
   abbreviation: L
   description: A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
 
-reach:
-  name: reach
-  abbreviation: R
-  description: This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon.
+ammunition:
+  name: ammunition
+  abbreviation: A
+  description: This weapon fires ammunition.
+
+versatile:
+  name: versatile
+  abbreviation: V
+  description: This weapon can be used with either one or two hands.
