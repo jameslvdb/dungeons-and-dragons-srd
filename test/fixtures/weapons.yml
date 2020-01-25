@@ -5,26 +5,21 @@ shortsword:
   weapon_type: melee
   damage_type: piercing
   damage: 1d6
-  two_handed_damage:
   category: martial
   value: 1000
   weight: 2
   weapon_properties: finesse, light
-  range:
-  description:
 
 shortbow:
   name: shortbow
   weapon_type: ranged
   damage_type: piercing
   damage: 1d6
-  two_handed_damage:
   category: simple
   value: 2500
   weight: 2
   weapon_properties: ammunition
   range: 80/320
-  description:
 
 longsword:
   name: longsword
@@ -36,5 +31,3 @@ longsword:
   value: 1500
   weight: 3
   weapon_properties: versatile
-  range:
-  description:
