@@ -8,10 +8,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Type</th>
-      <th>Category</th>
+      <th>Cost</th>
       <th>Damage</th>
-      <th>Range</th>
+      <th>Weight</th>
+      <th>Properties</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,10 +20,10 @@
     <% @weapons.each do |weapon| %>
       <tr>
         <td><%= link_to weapon.name.titleize, weapon_path(weapon) %></td>
-        <td><%= weapon.weapon_type %></td>
-        <td><%= weapon.category %></td>
-        <td><%= render_damage(weapon) %></td>
-        <td><%= weapon.range %></td>
+        <td><%= format_value(weapon.value) %></td>
+        <td><%= "#{weapon.damage} #{weapon.damage_type&.downcase}" %></td>
+        <td><%= "#{weapon.weight} lbs." %></td>
+        <td><%= render_properties(weapon) %></td>
         <td><%= link_to 'Show', weapon %></td>
         <td><%= link_to 'Edit', edit_weapon_path(weapon) %></td>
         <td><%= link_to 'Destroy', weapon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
