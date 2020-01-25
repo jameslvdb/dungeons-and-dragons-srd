@@ -1,3 +1,20 @@
 // Place all the styles related to the Weapons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+td, th {
+  // border: 1px solid black;
+  padding-right: 10px;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgb(235, 233, 221);
+}
+
+th {
+  text-align: left;
+}
+
+.weapon-row {
+  padding-left: 20px;
+}

@@ -17,18 +17,14 @@
   </thead>
 
   <tbody>
-    <% @weapons.each do |weapon| %>
-      <tr>
-        <td><%= link_to weapon.name.titleize, weapon_path(weapon) %></td>
-        <td><%= format_value(weapon.value) %></td>
-        <td><%= "#{weapon.damage} #{weapon.damage_type&.downcase}" %></td>
-        <td><%= "#{weapon.weight} lbs." %></td>
-        <td><%= render_properties(weapon) %></td>
-        <td><%= link_to 'Show', weapon %></td>
-        <td><%= link_to 'Edit', edit_weapon_path(weapon) %></td>
-        <td><%= link_to 'Destroy', weapon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <tr><td colspan="8"><strong><em>Simple Melee Weapons</em></strong></td></tr>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'simple', weapon_type: 'melee')} %>
+    <tr><td colspan="8"><strong><em>Simple Ranged Weapons</em></strong></td></tr>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'simple', weapon_type: 'ranged')} %>
+    <tr><td colspan="8"><strong><em>Martial Melee Weapons</em></strong></td></tr>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'martial', weapon_type: 'melee')} %>
+    <tr><td colspan="8"><strong><em>Martial Ranged Weapons</em></strong></td></tr>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'martial', weapon_type: 'ranged')} %>
   </tbody>
 </table>
 
