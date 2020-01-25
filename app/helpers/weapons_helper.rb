@@ -7,12 +7,13 @@ module WeaponsHelper
 
   def render_properties(weapon)
     properties = weapon.weapon_properties.pluck(:name)
+    # get out early if no properties exist
     return if properties.empty?
     properties.each do |property|
+      # show two-handed damage in the properties column
       if property == 'versatile'
-        puts 'versatile weapon'
         property << " (#{weapon.two_handed_damage})"
-        puts property
+      # show range in the properties column
       elsif property == 'thrown' || property == 'ammunition'
         property << " (range #{weapon.range})"
       end
