@@ -17,3 +17,7 @@
   width: 50%;
   margin: 0 auto;
 }
+
+tbody tr:nth-child(odd) {
+  background: rgb(235, 233, 221);
+}
