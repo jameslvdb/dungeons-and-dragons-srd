@@ -5,7 +5,7 @@ class WeaponsHelperTest < ActionView::TestCase
     assert_equal '1d6 piercing', render_damage(weapons(:shortsword))
   end
 
-  test 'should return 1d8 slashing (1d10)' do
-    assert_equal '1d8 slashing (1d10)', render_damage(weapons(:longsword))
+  test 'should return 1d8 slashing' do
+    assert_equal '1d8 slashing', render_damage(weapons(:longsword))
   end
 end

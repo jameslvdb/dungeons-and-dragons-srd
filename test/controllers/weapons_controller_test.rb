@@ -9,8 +9,8 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
     get weapons_url
     assert_response :success
     assert_select 'h1', 'Weapons'
-    
-    column_headers = %w[Name Type Category Damage Range]
+
+    column_headers = %w[Name Cost Damage Weight Properties]
     column_headers.each do |header|
       assert_select 'th', header
     end
