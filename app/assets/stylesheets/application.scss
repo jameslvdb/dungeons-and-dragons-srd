@@ -13,13 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+$headerColor: #58180D;
+$hrColor: #c9ad6a;
+$backgroundImage: url('paper-texture.png');
+
+h1, h2, h3, h4 {
+  color: $headerColor;
+}
+
+h2, h3, h4 {
+  border-bottom: 2px solid $hrColor;
+}
+
+body {
+  font-size: 16px;
+  background-image: $backgroundImage;
+}
+
 .small_width {
   width: 50%;
   margin: 0 auto;
-}
-
-tbody tr:nth-child(odd) {
-  background: rgb(235, 233, 221);
 }
 
 .offset-row {
