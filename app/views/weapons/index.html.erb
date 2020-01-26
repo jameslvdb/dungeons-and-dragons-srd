@@ -17,13 +17,13 @@
 
   <tbody>
     <tr><td colspan="8"><strong><em>Simple Melee Weapons</em></strong></td></tr>
-    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'simple', weapon_type: 'melee')} %>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'simple', weapon_type: 'melee').preload(:weapon_properties)} %>
     <tr><td colspan="8"><strong><em>Simple Ranged Weapons</em></strong></td></tr>
-    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'simple', weapon_type: 'ranged')} %>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'simple', weapon_type: 'ranged').preload(:weapon_properties)} %>
     <tr><td colspan="8"><strong><em>Martial Melee Weapons</em></strong></td></tr>
-    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'martial', weapon_type: 'melee')} %>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'martial', weapon_type: 'melee').preload(:weapon_properties)} %>
     <tr><td colspan="8"><strong><em>Martial Ranged Weapons</em></strong></td></tr>
-    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'martial', weapon_type: 'ranged')} %>
+    <%= render partial: "weapon_subcategory", locals: {weapons: @weapons.where(category: 'martial', weapon_type: 'ranged').preload(:weapon_properties)} %>
   </tbody>
 </table>
 

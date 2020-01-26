@@ -4,7 +4,7 @@ class WeaponsController < ApplicationController
   # GET /weapons
   # GET /weapons.json
   def index
-    @weapons = Weapon.all
+    @weapons = Weapon.all.preload(:weapon_properties)
   end
 
   # GET /weapons/1
