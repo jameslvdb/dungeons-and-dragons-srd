@@ -4,7 +4,7 @@
   <h1><%= @armor.name.titleize %></h1>
 
   <p>
-    <em><%= @armor.armor_type %> armor</em>
+    <em><%= @armor.armor_type.capitalize %> armor</em>
     <br>
     <%= "#{format_value(@armor.value)}, #{@armor.weight} lbs." %>
   </p>
