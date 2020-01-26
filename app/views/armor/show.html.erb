@@ -10,19 +10,23 @@
   </p>
 
   <p>
-    <strong>AC:</strong>
+    <strong>Armor Class:</strong>
     <%= render_armor_class(@armor) %>
   </p>
 
-  <p>
-    <strong>Strength requirement:</strong>
-    <%= @armor.strength_requirement %>
-  </p>
+  <% if @armor.strength_requirement > 0 %>
+    <p>
+      <strong>Strength requirement:</strong>
+      <%= @armor.strength_requirement %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Stealth disadvantage:</strong>
-    <%= @armor.stealth_disadvantage %>
-  </p>
+  <% if @armor.stealth_disadvantage %>
+    <p>
+      <strong>Stealth disadvantage:</strong>
+      <%= @armor.stealth_disadvantage %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Description:</strong>
