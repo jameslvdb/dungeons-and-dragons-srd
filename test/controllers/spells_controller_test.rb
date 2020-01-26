@@ -14,7 +14,7 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
     column_headers.each do |header|
       assert_select 'th', header
     end
-    assert_select 'th', column_headers.length + 1
+    assert_select 'th', column_headers.length
   end
 
   test "should get new" do
