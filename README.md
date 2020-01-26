@@ -10,7 +10,7 @@ This application serves as a 5th Edition Dungeons & Dragons reference applicatio
 
 If you don't have a Ruby version manager, try out [rbenv](https://github.com/rbenv/rbenv)! Follow rbenv's [installation guide](https://github.com/rbenv/rbenv#installation).
 
-Using rbenv, install the version of Ruby listed in the Gemfile (in this case, 2.6.4).
+Using rbenv, install the version of Ruby listed in the Gemfile (in this case, 2.6.5).
 
 #### Yarn
 
@@ -29,4 +29,4 @@ TODO
 
 ## Testing
 
-This project uses Minitest. To run the test suite, run `bin/rails test`. 
+This project uses Minitest. To run the test suite, run `bin/rails test`.
