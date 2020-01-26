@@ -8,6 +8,13 @@ class ArmorControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get armor_index_url
     assert_response :success
+    assert_select 'h1', 'Armor'
+
+    column_headers = ['Name', 'Cost', 'Armor Class (AC)', 'Strength', 'Stealth', 'Weight']
+    column_headers.each do |header|
+      assert_select 'th', header
+    end
+    assert_select 'th', column_headers.length
   end
 
   test "should get new" do
@@ -17,7 +24,7 @@ class ArmorControllerTest < ActionDispatch::IntegrationTest
 
   test "should create armor" do
     assert_difference('Armor.count') do
-      post armor_index_url, params: { armor: { ac: @armor.ac, armor_type: @armor.armor_type, description: @armor.description, name: @armor.name, stealth_disadvantage: @armor.stealth_disadvantage, strength_requirement: @armor.strength_requirement, value: @armor.value, weight: @armor.weight } }
+      post armor_index_url, params: { armor: { ac: @armor.ac, armor_type: @armor.armor_type, description: @armor.description, name: "new armor", stealth_disadvantage: @armor.stealth_disadvantage, strength_requirement: @armor.strength_requirement, value: @armor.value, weight: @armor.weight } }
     end
 
     assert_redirected_to armor_url(Armor.last)
@@ -34,7 +41,7 @@ class ArmorControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update armor" do
-    patch armor_url(@armor), params: { armor: { ac: @armor.ac, armor_type: @armor.armor_type, description: @armor.description, name: @armor.name, stealth_disadvantage: @armor.stealth_disadvantage, strength_requirement: @armor.strength_requirement, value: @armor.value, weight: @armor.weight } }
+    patch armor_url(@armor), params: { armor: { ac: @armor.ac, armor_type: @armor.armor_type, description: @armor.description, name: "some new name", stealth_disadvantage: @armor.stealth_disadvantage, strength_requirement: @armor.strength_requirement, value: @armor.value, weight: @armor.weight } }
     assert_redirected_to armor_url(@armor)
   end
 

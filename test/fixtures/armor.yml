@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  armor_type: MyString
+  armor_type: light
   ac: 1
   strength_requirement: 1
   stealth_disadvantage: false
@@ -12,7 +12,7 @@ one:
 
 two:
   name: MyString
-  armor_type: MyString
+  armor_type: medium
   ac: 1
   strength_requirement: 1
   stealth_disadvantage: false

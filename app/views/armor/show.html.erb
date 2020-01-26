@@ -1,44 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @armor.name %>
-</p>
+<div class="small_width">
+  <h1><%= @armor.name.titleize %></h1>
 
-<p>
-  <strong>Armor type:</strong>
-  <%= @armor.armor_type %>
-</p>
+  <p>
+    <em><%= @armor.armor_type %> armor</em>
+    <br>
+    <%= "#{format_value(@armor.value)}, #{@armor.weight} lbs." %>
+  </p>
 
-<p>
-  <strong>AC:</strong>
-  <%= @armor.ac %>
-</p>
+  <p>
+    <strong>AC:</strong>
+    <%= render_armor_class(@armor) %>
+  </p>
 
-<p>
-  <strong>Strength requirement:</strong>
-  <%= @armor.strength_requirement %>
-</p>
+  <p>
+    <strong>Strength requirement:</strong>
+    <%= @armor.strength_requirement %>
+  </p>
 
-<p>
-  <strong>Stealth disadvantage:</strong>
-  <%= @armor.stealth_disadvantage %>
-</p>
+  <p>
+    <strong>Stealth disadvantage:</strong>
+    <%= @armor.stealth_disadvantage %>
+  </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @armor.weight %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= sanitize substitute_links(@armor.description), scrubber: PermitTableScrubber.new %>
+  </p>
 
-<p>
-  <strong>Value:</strong>
-  <%= @armor.value %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @armor.description %>
-</p>
-
-<%= link_to 'Edit', edit_armor_path(@armor) %> |
-<%= link_to 'Back', armor_index_path %>
+  <%= link_to 'Edit', edit_armor_path(@armor) %> |
+  <%= link_to 'Back', armor_index_path %>
+</div>
