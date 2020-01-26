@@ -4,7 +4,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get home_index_url
     assert_response :success
-    assert_select 'li', 3
+    assert_select 'li', 4
   end
 
 end

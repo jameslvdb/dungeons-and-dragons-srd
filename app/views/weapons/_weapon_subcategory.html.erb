@@ -1,6 +1,6 @@
 <% weapons.each do |weapon| %>
   <tr>
-    <td class="weapon-row"><%= link_to weapon.name.titleize, weapon_path(weapon) %></td>
+    <td class="offset-row"><%= link_to weapon.name.titleize, weapon_path(weapon) %></td>
     <td><%= format_value(weapon.value) %></td>
     <td><%= "#{weapon.damage} #{weapon.damage_type&.downcase}" %></td>
     <td><%= "#{weapon.weight} lbs." %></td>

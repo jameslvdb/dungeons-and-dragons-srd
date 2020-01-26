@@ -1,0 +1,10 @@
+<% armor.each do |armor| %>
+  <tr>
+    <td class="offset-row"><%= link_to armor.name.titleize, armor_path(armor) %></td>
+    <td><%= format_value(armor.value) %></td>
+    <td><%= armor.ac %></td>
+    <td><%= armor.strength_requirement > 0 ? "Str #{armor.strength_requirement}" : "-" %></td>
+    <td><%= armor.stealth_disadvantage ? "Disadvantage" : "-" %></td>
+    <td><%= "#{armor.weight} lbs." %></td>
+  </tr>
+<% end %>
