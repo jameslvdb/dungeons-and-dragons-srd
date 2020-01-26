@@ -5,8 +5,5 @@
     <td><%= "#{weapon.damage} #{weapon.damage_type&.downcase}" %></td>
     <td><%= "#{weapon.weight} lbs." %></td>
     <td><%= render_properties(weapon) %></td>
-    <td><%= link_to 'Show', weapon %></td>
-    <td><%= link_to 'Edit', edit_weapon_path(weapon) %></td>
-    <td><%= link_to 'Destroy', weapon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
