@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @armor.name %>
+</p>
+
+<p>
+  <strong>Armor type:</strong>
+  <%= @armor.armor_type %>
+</p>
+
+<p>
+  <strong>AC:</strong>
+  <%= @armor.ac %>
+</p>
+
+<p>
+  <strong>Strength requirement:</strong>
+  <%= @armor.strength_requirement %>
+</p>
+
+<p>
+  <strong>Stealth disadvantage:</strong>
+  <%= @armor.stealth_disadvantage %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @armor.weight %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @armor.value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @armor.description %>
+</p>
+
+<%= link_to 'Edit', edit_armor_path(@armor) %> |
+<%= link_to 'Back', armor_index_path %>

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_22_002116) do
+ActiveRecord::Schema.define(version: 2020_01_26_011739) do
+
+  create_table "armor", force: :cascade do |t|
+    t.string "name"
+    t.string "armor_type"
+    t.integer "ac"
+    t.integer "strength_requirement"
+    t.boolean "stealth_disadvantage"
+    t.integer "weight"
+    t.integer "value"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "conditions", force: :cascade do |t|
     t.string "name"
