@@ -82,7 +82,10 @@ spells.each do |s|
 
   spell.verbal = s['components']['v']
   spell.somatic = s['components']['s']
-  spell.material = s['components']['m']
+  # spell.material = s['components']['m']&['text']
+  if s['components']['m']
+    spell.material = s['components']['m']['text']
+  end
   # spell.source = Source::SOURCES[s['source']] + ', ' + s['page'].to_s
   spell.source = "Player's Handbook"
   ritual = s['meta']['ritual'] if s['meta']

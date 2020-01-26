@@ -3,13 +3,7 @@ module SpellsHelper
     result = []
     result.append('V') if spell.verbal
     result.append('S') if spell.somatic
-    if !spell.material.nil?
-      if spell.material[0] == '{'
-        result.append("M (#{eval(spell.material)['text']})")
-      elsif spell.material
-        result.append("M (#{spell.material})")
-      end
-    end
+    result.append("M (#{spell.material})") if spell.material
     result.join(', ')
   end
 
