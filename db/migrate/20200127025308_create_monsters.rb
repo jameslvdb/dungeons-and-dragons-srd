@@ -25,6 +25,7 @@ class CreateMonsters < ActiveRecord::Migration[6.0]
       t.string :traits
       t.string :actions
       t.string :legendary_actions
+      t.string :spellcasting
 
       t.timestamps
     end
