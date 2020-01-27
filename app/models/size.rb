@@ -1,10 +1,10 @@
 class Size
   SIZES = {
-    'T' => 'Tiny',
-    'S' => 'Small',
-    'M' => 'Medium',
-    'L' => 'Large',
-    'H' => 'Huge',
-    'G' => 'Gargantuan'
+    'T' => 'tiny',
+    'S' => 'small',
+    'M' => 'medium',
+    'L' => 'large',
+    'H' => 'huge',
+    'G' => 'gargantuan'
   }
 end
