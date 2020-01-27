@@ -1,0 +1,53 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  size: MyString
+  monster_type: MyString
+  ac: MyString
+  hp: 1
+  hp_formula: MyString
+  speed: MyString
+  strength: 1
+  dexterity: 1
+  constitution: 1
+  intelligence: 1
+  wisdom: 1
+  charisma: 1
+  saving_throws: MyString
+  skills: MyString
+  damage_resistances: MyString
+  damage_immunities: MyString
+  condition_immunities: MyString
+  senses: MyString
+  languages: MyString
+  challenge: MyString
+  traits: MyString
+  actions: MyString
+  legendary_actions: MyString
+
+two:
+  name: MyString
+  size: MyString
+  monster_type: MyString
+  ac: MyString
+  hp: 1
+  hp_formula: MyString
+  speed: MyString
+  strength: 1
+  dexterity: 1
+  constitution: 1
+  intelligence: 1
+  wisdom: 1
+  charisma: 1
+  saving_throws: MyString
+  skills: MyString
+  damage_resistances: MyString
+  damage_immunities: MyString
+  condition_immunities: MyString
+  senses: MyString
+  languages: MyString
+  challenge: MyString
+  traits: MyString
+  actions: MyString
+  legendary_actions: MyString
