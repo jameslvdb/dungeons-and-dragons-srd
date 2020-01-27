@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_025308) do
     t.string "name"
     t.string "size"
     t.string "monster_type"
+    t.string "alignment"
     t.string "ac"
     t.integer "hp"
     t.string "hp_formula"
