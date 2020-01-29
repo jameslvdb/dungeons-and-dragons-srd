@@ -6,63 +6,19 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Size</th>
-      <th>Monster type</th>
+      <th>CR</th>
       <th>AC</th>
       <th>HP</th>
-      <th>HP formula</th>
-      <th>Speed</th>
-      <th>Strength</th>
-      <th>Dexterity</th>
-      <th>Constitution</th>
-      <th>Intelligence</th>
-      <th>Wisdom</th>
-      <th>Charisma</th>
-      <th>Saving throws</th>
-      <th>Skills</th>
-      <th>Damage resistances</th>
-      <th>Damage immunities</th>
-      <th>Condition immunities</th>
-      <th>Senses</th>
-      <th>Languages</th>
-      <th>Challenge</th>
-      <th>Traits</th>
-      <th>Actions</th>
-      <th>Legendary actions</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @monsters.each do |monster| %>
       <tr>
-        <td><%= monster.name %></td>
-        <td><%= monster.size %></td>
-        <td><%= monster.monster_type %></td>
+        <td><%= link_to monster.name.titleize, monster_path(monster) %></td>
+        <td><%= monster.challenge %></td>
         <td><%= monster.ac %></td>
         <td><%= monster.hp %></td>
-        <td><%= monster.hp_formula %></td>
-        <td><%= monster.speed %></td>
-        <td><%= monster.strength %></td>
-        <td><%= monster.dexterity %></td>
-        <td><%= monster.constitution %></td>
-        <td><%= monster.intelligence %></td>
-        <td><%= monster.wisdom %></td>
-        <td><%= monster.charisma %></td>
-        <td><%= monster.saving_throws %></td>
-        <td><%= monster.skills %></td>
-        <td><%= monster.damage_resistances %></td>
-        <td><%= monster.damage_immunities %></td>
-        <td><%= monster.condition_immunities %></td>
-        <td><%= monster.senses %></td>
-        <td><%= monster.languages %></td>
-        <td><%= monster.challenge %></td>
-        <td><%= monster.traits %></td>
-        <td><%= monster.actions %></td>
-        <td><%= monster.legendary_actions %></td>
-        <td><%= link_to 'Show', monster %></td>
-        <td><%= link_to 'Edit', edit_monster_path(monster) %></td>
-        <td><%= link_to 'Destroy', monster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

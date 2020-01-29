@@ -1,124 +1,97 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @monster.name %>
-</p>
+<div class="small_width">
+  <h1><%= @monster.name.titleize %></h1>
 
-<p>
-  <strong>Size:</strong>
-  <%= @monster.size %>
-</p>
+  <p>
+    <em><%= render_size_type_alignment(@monster) %></em>
+  </p>
 
-<p>
-  <strong>Monster type:</strong>
-  <%= @monster.monster_type %>
-</p>
+  <p>
+    <strong>Armor Class:</strong> <%= @monster.ac %>
+    <br>
+    <strong>Hit Points:</strong> <%= render_hp(@monster) %>
+    <br>
+    <strong>Speed:</strong> <%= @monster.speed %>
+  </p>
 
-<p>
-  <strong>AC:</strong>
-  <%= @monster.ac %>
-</p>
+  <table class="monster_stats">
+    <tr>
+      <th>STR</th>
+      <th>DEX</th>
+      <th>CON</th>
+      <th>INT</th>
+      <th>WIS</th>
+      <th>CHA</th>
+    </tr>
+    <tr>
+      <% @monster.ability_scores.each do |ability, value| %>
+        <td><%= ability(value) %></td>
+      <% end %>
+    </tr>
+  </table>
 
-<p>
-  <strong>HP:</strong>
-  <%= @monster.hp %>
-</p>
+  <hr class="red_triangle">
 
-<p>
-  <strong>HP formula:</strong>
-  <%= @monster.hp_formula %>
-</p>
+  <p class="red_text">
+    <% if @monster.saving_throws %>
+      <strong>Saving Throws:</strong>
+      <%= @monster.saving_throws %>
+      <br>
+    <% end %>
 
-<p>
-  <strong>Speed:</strong>
-  <%= @monster.speed %>
-</p>
+    <% if @monster.skills %>
+      <strong>Skills:</strong>
+      <%= @monster.skills %>
+      <br>
+    <% end %>
 
-<p>
-  <strong>Strength:</strong>
-  <%= @monster.strength %>
-</p>
+    <% unless @monster.damage_immunities.nil? %>
+      <strong>Damage Immunities:</strong>
+      <%= @monster.damage_immunities %>
+      <br>
+    <% end %>
 
-<p>
-  <strong>Dexterity:</strong>
-  <%= @monster.dexterity %>
-</p>
+    <% unless @monster.damage_resistances.nil? %>
+      <strong>Resistances:</strong>
+      <%= @monster.damage_resistances %>
+      <br>
+    <% end %>
 
-<p>
-  <strong>Constitution:</strong>
-  <%= @monster.constitution %>
-</p>
+    <% unless @monster.condition_immunities.nil? %>
+      <strong>Condition Immunities:</strong>
+      <%= @monster.condition_immunities %>
+      <br>
+    <% end %>
 
-<p>
-  <strong>Intelligence:</strong>
-  <%= @monster.intelligence %>
-</p>
+    <strong>Senses:</strong>
+    <%= @monster.senses %>
+    <br>
 
-<p>
-  <strong>Wisdom:</strong>
-  <%= @monster.wisdom %>
-</p>
+    <strong>Languages:</strong>
+    <%= @monster.languages %>
+    <br>
 
-<p>
-  <strong>Charisma:</strong>
-  <%= @monster.charisma %>
-</p>
+    <strong>Challenge:</strong>
+    <%= @monster.challenge %>
+  </p>
 
-<p>
-  <strong>Saving throws:</strong>
-  <%= @monster.saving_throws %>
-</p>
+  <hr class="red_triangle">
 
-<p>
-  <strong>Skills:</strong>
-  <%= @monster.skills %>
-</p>
+  <%= sanitize substitute_links(@monster.traits), scrubber: PermitTableScrubber.new %>
+  <br>
+  <% if @monster.spellcasting %>
+    <%= sanitize substitute_links(@monster.spellcasting), scrubber: PermitTableScrubber.new %>
+    <br>
+  <% end %>
+  <h2>Actions</h2>
+  <%= sanitize substitute_links(@monster.actions), scrubber: PermitTableScrubber.new %>
+  <br>
+  <h2>Legendary Actions</h2>
+  <%= sanitize substitute_links(@monster.legendary_actions), scrubber: PermitTableScrubber.new %>
 
-<p>
-  <strong>Damage resistances:</strong>
-  <%= @monster.damage_resistances %>
-</p>
+  <hr class="red_triangle">
 
-<p>
-  <strong>Damage immunities:</strong>
-  <%= @monster.damage_immunities %>
-</p>
-
-<p>
-  <strong>Condition immunities:</strong>
-  <%= @monster.condition_immunities %>
-</p>
-
-<p>
-  <strong>Senses:</strong>
-  <%= @monster.senses %>
-</p>
-
-<p>
-  <strong>Languages:</strong>
-  <%= @monster.languages %>
-</p>
-
-<p>
-  <strong>Challenge:</strong>
-  <%= @monster.challenge %>
-</p>
-
-<p>
-  <strong>Traits:</strong>
-  <%= @monster.traits %>
-</p>
-
-<p>
-  <strong>Actions:</strong>
-  <%= @monster.actions %>
-</p>
-
-<p>
-  <strong>Legendary actions:</strong>
-  <%= @monster.legendary_actions %>
-</p>
-
-<%= link_to 'Edit', edit_monster_path(@monster) %> |
-<%= link_to 'Back', monsters_path %>
+  <%= link_to 'Edit', edit_monster_path(@monster) %> |
+  <%= link_to 'Back', monsters_path %>
+</div>
