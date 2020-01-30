@@ -2,8 +2,9 @@
 
 one:
   name: MyString
-  size: MyString
+  size: medium
   monster_type: MyString
+  alignment: neutral
   ac: MyString
   hp: 1
   hp_formula: MyString
@@ -30,6 +31,7 @@ two:
   name: MyString
   size: MyString
   monster_type: MyString
+  alignment: neutral
   ac: MyString
   hp: 1
   hp_formula: MyString

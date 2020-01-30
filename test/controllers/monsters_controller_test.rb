@@ -17,7 +17,21 @@ class MonstersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create monster" do
     assert_difference('Monster.count') do
-      post monsters_url, params: { monster: { ac: @monster.ac, actions: @monster.actions, challenge: @monster.challenge, charisma: @monster.charisma, condition_immunities: @monster.condition_immunities, constitution: @monster.constitution, damage_immunities: @monster.damage_immunities, damage_resistances: @monster.damage_resistances, dexterity: @monster.dexterity, hp: @monster.hp, hp_formula: @monster.hp_formula, intelligence: @monster.intelligence, languages: @monster.languages, legendary_actions: @monster.legendary_actions, monster_type: @monster.monster_type, name: @monster.name, saving_throws: @monster.saving_throws, senses: @monster.senses, size: @monster.size, skills: @monster.skills, speed: @monster.speed, strength: @monster.strength, traits: @monster.traits, wisdom: @monster.wisdom } }
+      post monsters_url, params: {
+        monster: {
+          ac: @monster.ac, actions: @monster.actions, alignment: @monster.alignment,
+          challenge: @monster.challenge, charisma: @monster.charisma,
+          condition_immunities: @monster.condition_immunities,
+          constitution: @monster.constitution, damage_immunities: @monster.damage_immunities,
+          damage_resistances: @monster.damage_resistances, dexterity: @monster.dexterity,
+          hp: @monster.hp, hp_formula: @monster.hp_formula, intelligence: @monster.intelligence,
+          languages: @monster.languages, legendary_actions: @monster.legendary_actions,
+          monster_type: @monster.monster_type, name: @monster.name,
+          saving_throws: @monster.saving_throws, senses: @monster.senses, size: @monster.size,
+          skills: @monster.skills, speed: @monster.speed, strength: @monster.strength,
+          traits: @monster.traits, wisdom: @monster.wisdom
+        }
+      }
     end
 
     assert_redirected_to monster_url(Monster.last)
@@ -34,7 +48,21 @@ class MonstersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update monster" do
-    patch monster_url(@monster), params: { monster: { ac: @monster.ac, actions: @monster.actions, challenge: @monster.challenge, charisma: @monster.charisma, condition_immunities: @monster.condition_immunities, constitution: @monster.constitution, damage_immunities: @monster.damage_immunities, damage_resistances: @monster.damage_resistances, dexterity: @monster.dexterity, hp: @monster.hp, hp_formula: @monster.hp_formula, intelligence: @monster.intelligence, languages: @monster.languages, legendary_actions: @monster.legendary_actions, monster_type: @monster.monster_type, name: @monster.name, saving_throws: @monster.saving_throws, senses: @monster.senses, size: @monster.size, skills: @monster.skills, speed: @monster.speed, strength: @monster.strength, traits: @monster.traits, wisdom: @monster.wisdom } }
+    patch monster_url(@monster), params: { 
+      monster: {
+        ac: @monster.ac, actions: @monster.actions, alignment: @monster.alignment,
+        challenge: @monster.challenge, charisma: @monster.charisma,
+        condition_immunities: @monster.condition_immunities,
+        constitution: @monster.constitution, damage_immunities: @monster.damage_immunities,
+        damage_resistances: @monster.damage_resistances, dexterity: @monster.dexterity,
+        hp: @monster.hp, hp_formula: @monster.hp_formula, intelligence: @monster.intelligence,
+        languages: @monster.languages, legendary_actions: @monster.legendary_actions,
+        monster_type: @monster.monster_type, name: @monster.name,
+        saving_throws: @monster.saving_throws, senses: @monster.senses, size: @monster.size,
+        skills: @monster.skills, speed: @monster.speed, strength: @monster.strength,
+        traits: @monster.traits, wisdom: @monster.wisdom
+      }
+    }
     assert_redirected_to monster_url(@monster)
   end
 
