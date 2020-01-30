@@ -7,6 +7,8 @@
     <em><%= render_size_type_alignment(@monster) %></em>
   </p>
 
+  <hr>
+
   <p>
     <strong>Armor Class:</strong> <%= @monster.ac %>
     <br>
@@ -73,7 +75,7 @@
     <br>
 
     <strong>Challenge:</strong>
-    <%= @monster.challenge %>
+    <%= @monster.challenge || '-' %>
   </p>
 
   <hr class="red_triangle">
@@ -87,10 +89,13 @@
   <h2>Actions</h2>
   <%= sanitize substitute_links(@monster.actions), scrubber: PermitTableScrubber.new %>
   <br>
-  <h2>Legendary Actions</h2>
-  <%= sanitize substitute_links(@monster.legendary_actions), scrubber: PermitTableScrubber.new %>
+  <% if !@monster.legendary_actions.empty? %>
+    <h2>Legendary Actions</h2>
+    <%= sanitize substitute_links(@monster.legendary_actions), scrubber: PermitTableScrubber.new %>
+    <br>
+  <% end %>
 
-  <hr class="red_triangle">
+  <br>
 
   <%= link_to 'Edit', edit_monster_path(@monster) %> |
   <%= link_to 'Back', monsters_path %>
