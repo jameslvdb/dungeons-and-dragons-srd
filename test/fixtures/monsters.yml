@@ -10,11 +10,11 @@ one:
   hp_formula: MyString
   speed: MyString
   strength: 1
-  dexterity: 1
-  constitution: 1
-  intelligence: 1
-  wisdom: 1
-  charisma: 1
+  dexterity: 2
+  constitution: 3
+  intelligence: 4
+  wisdom: 5
+  charisma: 6
   saving_throws: MyString
   skills: MyString
   damage_resistances: MyString
