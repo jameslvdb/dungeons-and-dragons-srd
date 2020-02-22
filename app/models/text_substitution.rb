@@ -14,6 +14,11 @@ module TextSubstitution
       "+#{$1}"
     end
 
+    # format DC declarations
+    doc.gsub!(/{@dc (\d{1,2})}/) do
+      "DC #{$1}"
+    end
+
     # format attack type descriptions
     doc.gsub!(/{@atk (\w+,?\w*)}/) do
       if $1 == 'mw'
