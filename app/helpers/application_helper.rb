@@ -6,7 +6,7 @@ module ApplicationHelper
     #   link_to crt.name.downcase, creature_path(crt)
     # end
 
-    str.gsub!(/{@spell (\w+\s?\w*)}/) do
+    str.gsub!(/{@spell (.*?)}/) do
       spell = Spell.find_by(name: $1.downcase)
       link_to spell.name.downcase, spell_path(spell)
     end
