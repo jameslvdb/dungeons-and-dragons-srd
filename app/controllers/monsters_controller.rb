@@ -4,7 +4,7 @@ class MonstersController < ApplicationController
   # GET /monsters
   # GET /monsters.json
   def index
-    @monsters = Monster.all
+    @monsters = Monster.all.sort_by(&:id)
   end
 
   # GET /monsters/1
