@@ -115,10 +115,27 @@ def set_damage_defenses(defenses)
   result
 end
 
+def format_action_entries(entries)
+  result = ""
+  entries&.each do |entry|
+    if entry.is_a? Hash
+      if entry['type'] == 'list'
+        entry['items'].each do |item|
+          result << "<b><em>#{item['name']}</em></b> #{item['entry']}<br>"
+        end
+      end
+    else
+      result << "#{entry}<br>"
+    end
+  end
+  result
+end
+
+# Formats actions as well
 def format_traits(traits)
   result = ""
   traits&.each do |trait|
-    result << "<b><em>#{trait['name']}.</em></b> #{trait['entries'].join(' ')}<br>"
+    result << "<b><em>#{trait['name']}.</em></b> #{format_action_entries(trait['entries'])}<br>"
   end
   result.delete_suffix('<br>')
 end
