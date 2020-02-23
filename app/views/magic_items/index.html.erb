@@ -1,0 +1,27 @@
+<%= link_to "Home", home_index_path %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Magic Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rarity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @magic_items.each do |magic_item| %>
+      <tr>
+        <td><%= link_to magic_item.name.titleize, magic_item_path(magic_item) %></td>
+        <td><%= magic_item.rarity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Magic Item', new_magic_item_path %>

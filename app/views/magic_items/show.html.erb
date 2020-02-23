@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="small_width">
+  <h1>
+    <%= @magic_item.name.titleize %>
+  </h1>
+
+  <p>
+    <em><%= render_base_description(@magic_item) %></em>
+  </p>
+
+  <div>
+    <%= sanitize substitute_links(@magic_item.description), scrubber: PermitTableScrubber.new %>
+  </div>
+
+  <br>
+  
+  <%= link_to 'Edit', edit_magic_item_path(@magic_item) %> |
+  <%= link_to 'Back', magic_items_path %>
+
+</div>

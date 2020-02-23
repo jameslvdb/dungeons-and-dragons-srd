@@ -42,8 +42,8 @@ module TextSubstitution
     end
 
     # format inline italics
-    doc.gsub!(/{@i (.*?)}/) do
-      "<em>#{$1}</em>"
+    doc.gsub!(/{@(i|italic) (.*?)}/) do
+      "<em>#{$2}</em>"
     end
 
     # format percent-chance tags
@@ -78,18 +78,30 @@ module TextSubstitution
     str
   end
 
+  def self.handle_cell(cell)
+    return cell if cell.is_a? String
+    cell['roll']['entry']
+  end
+
   def self.format_tables(entry)
     tables = ''
-    tables += "<h3>#{entry['caption']}</h3>"
+    if entry['caption']
+      tables += "<h3>#{entry['caption']}</h3>"
+    else
+      tables += '<br>'
+    end
     tables += '<table><tr>'
     entry['colLabels'].each do |header|
+      header.gsub!(/{@dice \d{1,2}d\d{1,3}\|([^|}]*?)}/) do
+        $1
+      end
       tables += "<th>#{header}</th>"
     end
     tables += '</tr>'
     entry['rows'].each do |row|
       tables += '<tr>'
       row.each do |cell|
-        tables += "<td>#{cell}</td>"
+        tables += "<td>#{TextSubstitution.handle_cell(cell)}</td>"
       end
       tables += '</tr>'
     end
