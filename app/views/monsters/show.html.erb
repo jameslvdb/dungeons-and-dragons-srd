@@ -78,10 +78,15 @@
     <%= @monster.challenge || '-' %>
   </p>
 
-  <hr class="red_triangle">
+  <% if !@monster.traits.empty? || @monster.spellcasting %>
+    <hr class="red_triangle">
+  <% end %>
 
-  <%= sanitize substitute_links(@monster.traits), scrubber: PermitTableScrubber.new %>
-  <br>
+  <% if !@monster.traits.empty? %>
+    <%= sanitize substitute_links(@monster.traits), scrubber: PermitTableScrubber.new %>
+    <br>
+  <% end %>
+  
   <% if @monster.spellcasting %>
     <%= sanitize substitute_links(@monster.spellcasting), scrubber: PermitTableScrubber.new %>
     <br>
