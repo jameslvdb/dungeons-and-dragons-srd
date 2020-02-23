@@ -20,4 +20,13 @@ class MonstersHelperTest < ActionView::TestCase
     monster = monsters(:demon)
     assert_equal '68 (8d10 + 24)', render_hp(monster)
   end
+
+  ability_scores = (1..20).to_a
+  ability_modifiers = ['-5', '-4', '-4', '-3', '-3', '-2', '-2', '-1', '-1', '+0', '+0', '+1', '+1', '+2', '+2', '+3', '+3', '+4', '+4', '+5']
+
+  ability_scores.each_with_index do |score, i|
+    test "should render #{score} as #{score} (#{ability_modifiers[i]})" do
+      assert_equal "#{score} (#{ability_modifiers[i]})", ability(score)
+    end
+  end
 end
