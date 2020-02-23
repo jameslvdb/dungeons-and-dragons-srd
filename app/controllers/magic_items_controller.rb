@@ -4,7 +4,7 @@ class MagicItemsController < ApplicationController
   # GET /magic_items
   # GET /magic_items.json
   def index
-    @magic_items = MagicItem.all
+    @magic_items = MagicItem.all.sort_by(&:name)
   end
 
   # GET /magic_items/1
