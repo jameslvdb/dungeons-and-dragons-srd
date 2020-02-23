@@ -35,6 +35,10 @@ module TextSubstitution
       "(Recharge #{$1}-6)"
     end
 
+    doc.gsub!(/{@recharge}/) do
+      "(Recharge 6)"
+    end
+
     doc
   end
 
