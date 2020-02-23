@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  wondrous: false
+  weight: 1.5
+  tier: MyString
+  rarity: MyString
+  attunement: MyString
+  description: MyString
+
+two:
+  name: MyString
+  wondrous: false
+  weight: 1.5
+  tier: MyString
+  rarity: MyString
+  attunement: MyString
+  description: MyString

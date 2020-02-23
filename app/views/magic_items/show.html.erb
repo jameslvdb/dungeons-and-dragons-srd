@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @magic_item.name %>
+</p>
+
+<p>
+  <strong>Wondrous:</strong>
+  <%= @magic_item.wondrous %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @magic_item.weight %>
+</p>
+
+<p>
+  <strong>Tier:</strong>
+  <%= @magic_item.tier %>
+</p>
+
+<p>
+  <strong>Rarity:</strong>
+  <%= @magic_item.rarity %>
+</p>
+
+<p>
+  <strong>Attunement:</strong>
+  <%= @magic_item.attunement %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @magic_item.description %>
+</p>
+
+<%= link_to 'Edit', edit_magic_item_path(@magic_item) %> |
+<%= link_to 'Back', magic_items_path %>

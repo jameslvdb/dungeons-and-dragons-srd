@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Magic Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Wondrous</th>
+      <th>Weight</th>
+      <th>Tier</th>
+      <th>Rarity</th>
+      <th>Attunement</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @magic_items.each do |magic_item| %>
+      <tr>
+        <td><%= magic_item.name %></td>
+        <td><%= magic_item.wondrous %></td>
+        <td><%= magic_item.weight %></td>
+        <td><%= magic_item.tier %></td>
+        <td><%= magic_item.rarity %></td>
+        <td><%= magic_item.attunement %></td>
+        <td><%= magic_item.description %></td>
+        <td><%= link_to 'Show', magic_item %></td>
+        <td><%= link_to 'Edit', edit_magic_item_path(magic_item) %></td>
+        <td><%= link_to 'Destroy', magic_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Magic Item', new_magic_item_path %>
