@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+humanoid:
   name: MyString
   size: medium
-  monster_type: MyString
-  alignment: neutral
+  monster_type: humanoid
+  alignment: lawful good
   ac: MyString
-  hp: 1
-  hp_formula: MyString
+  hp: 75
+  hp_formula: 10d8 + 30
   speed: MyString
   strength: 1
   dexterity: 2
@@ -27,14 +27,14 @@ one:
   actions: MyString
   legendary_actions: MyString
 
-two:
+demon:
   name: MyString
-  size: MyString
-  monster_type: MyString
-  alignment: neutral
+  size: large
+  monster_type: demon
+  alignment: chaotic evil
   ac: MyString
-  hp: 1
-  hp_formula: MyString
+  hp: 68
+  hp_formula: 8d10 + 24
   speed: MyString
   strength: 1
   dexterity: 1

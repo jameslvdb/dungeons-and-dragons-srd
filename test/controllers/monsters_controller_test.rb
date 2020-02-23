@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MonstersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @monster = monsters(:one)
+    @monster = monsters(:humanoid)
   end
 
   test "should get index" do
@@ -48,7 +48,7 @@ class MonstersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update monster" do
-    patch monster_url(@monster), params: { 
+    patch monster_url(@monster), params: {
       monster: {
         ac: @monster.ac, actions: @monster.actions, alignment: @monster.alignment,
         challenge: @monster.challenge, charisma: @monster.charisma,
