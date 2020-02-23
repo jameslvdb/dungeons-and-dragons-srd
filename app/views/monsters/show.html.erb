@@ -84,9 +84,8 @@
 
   <% if !@monster.traits.empty? %>
     <%= sanitize substitute_links(@monster.traits), scrubber: PermitTableScrubber.new %>
-    <br>
   <% end %>
-  
+
   <% if @monster.spellcasting %>
     <%= sanitize substitute_links(@monster.spellcasting), scrubber: PermitTableScrubber.new %>
     <br>
