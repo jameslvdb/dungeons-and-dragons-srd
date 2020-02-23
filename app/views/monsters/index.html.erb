@@ -17,7 +17,7 @@
       <tr>
         <td><%= link_to monster.name.titleize, monster_path(monster) %></td>
         <td><%= monster.challenge %></td>
-        <td><%= monster.ac %></td>
+        <td><%= sanitize monster.ac, scrubber: PermitTableScrubber.new %></td>
         <td><%= monster.hp %></td>
       </tr>
     <% end %>
