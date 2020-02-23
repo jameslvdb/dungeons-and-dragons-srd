@@ -12,5 +12,6 @@ module MagicItemsHelper
         result << " (requires attunement #{item.attunement})"
       end
     end
+    result.capitalize
   end
 end

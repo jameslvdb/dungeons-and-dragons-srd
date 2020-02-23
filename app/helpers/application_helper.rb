@@ -3,7 +3,25 @@ module ApplicationHelper
     # use working creature links
     str.gsub!(/{@creature ([^|}]*?)(?:\|\|([^}]*?))?}/) do
       monster = Monster.find_by(name: $1.downcase)
-      link_to ($2 || monster.name.downcase), monster_path(monster)
+      if monster.nil?
+        $1
+      else
+        link_to ($2 || monster.name.downcase), monster_path(monster)
+      end
+    end
+
+    str.gsub!(/{@creature ([^|}]*?)(?:\|([^}]*?))?}/) do
+      monster = Monster.find_by(name: $1.downcase)
+      link_to monster.name.downcase, monster_path(monster)
+    end
+
+    str.gsub!(/{@item ([^|}]*?)(?:\|([^}]*?))?}/) do
+      item = MagicItem.find_by(name: $1.downcase)
+      if item.nil?
+        $1
+      else
+        link_to item.name.downcase, magic_item_path(item)
+      end
     end
 
     str.gsub!(/{@spell (.*?)}/) do

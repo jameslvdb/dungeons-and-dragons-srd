@@ -42,8 +42,8 @@ module TextSubstitution
     end
 
     # format inline italics
-    doc.gsub!(/{@i (.*?)}/) do
-      "<em>#{$1}</em>"
+    doc.gsub!(/{@(i|italic) (.*?)}/) do
+      "<em>#{$2}</em>"
     end
 
     # format percent-chance tags
