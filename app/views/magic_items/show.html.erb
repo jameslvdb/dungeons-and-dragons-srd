@@ -1,39 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @magic_item.name %>
-</p>
+<div class="small_width">
+  <h1>
+    <%= @magic_item.name.titleize %>
+  </h1>
 
-<p>
-  <strong>Wondrous:</strong>
-  <%= @magic_item.wondrous %>
-</p>
+  <p>
+    <em><%= render_base_description(@magic_item) %></em>
+  </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @magic_item.weight %>
-</p>
+  <div>
+    <%= sanitize substitute_links(@magic_item.description), scrubber: PermitTableScrubber.new %>
+  </div>
 
-<p>
-  <strong>Tier:</strong>
-  <%= @magic_item.tier %>
-</p>
+  <br>
+  
+  <%= link_to 'Edit', edit_magic_item_path(@magic_item) %> |
+  <%= link_to 'Back', magic_items_path %>
 
-<p>
-  <strong>Rarity:</strong>
-  <%= @magic_item.rarity %>
-</p>
-
-<p>
-  <strong>Attunement:</strong>
-  <%= @magic_item.attunement %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @magic_item.description %>
-</p>
-
-<%= link_to 'Edit', edit_magic_item_path(@magic_item) %> |
-<%= link_to 'Back', magic_items_path %>
+</div>
