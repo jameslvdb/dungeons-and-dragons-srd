@@ -6,8 +6,8 @@ humanoid:
   monster_type: humanoid
   alignment: lawful good
   ac: MyString
-  hp: 1
-  hp_formula: MyString
+  hp: 75
+  hp_formula: 10d8 + 30
   speed: MyString
   strength: 1
   dexterity: 2
@@ -33,8 +33,8 @@ demon:
   monster_type: demon
   alignment: chaotic evil
   ac: MyString
-  hp: 1
-  hp_formula: MyString
+  hp: 68
+  hp_formula: 8d10 + 24
   speed: MyString
   strength: 1
   dexterity: 1
