@@ -11,12 +11,12 @@ class MonstersHelperTest < ActionView::TestCase
     assert_equal 'large demon, chaotic evil', render_size_type_alignment(monster)
   end
 
-  test "should render HP as 75 (10d8 + 30)" do
+  test 'should render HP as 75 (10d8 + 30)' do
     monster = monsters(:humanoid)
     assert_equal '75 (10d8 + 30)', render_hp(monster)
   end
 
-  test "should render HP as 68 (8d10 + 24)" do
+  test 'should render HP as 68 (8d10 + 24)' do
     monster = monsters(:demon)
     assert_equal '68 (8d10 + 24)', render_hp(monster)
   end

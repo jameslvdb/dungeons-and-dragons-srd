@@ -5,17 +5,17 @@ class MonstersControllerTest < ActionDispatch::IntegrationTest
     @monster = monsters(:humanoid)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get monsters_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_monster_url
     assert_response :success
   end
 
-  test "should create monster" do
+  test 'should create monster' do
     assert_difference('Monster.count') do
       post monsters_url, params: {
         monster: {
@@ -37,17 +37,17 @@ class MonstersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to monster_url(Monster.last)
   end
 
-  test "should show monster" do
+  test 'should show monster' do
     get monster_url(@monster)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_monster_url(@monster)
     assert_response :success
   end
 
-  test "should update monster" do
+  test 'should update monster' do
     patch monster_url(@monster), params: {
       monster: {
         ac: @monster.ac, actions: @monster.actions, alignment: @monster.alignment,
@@ -66,7 +66,7 @@ class MonstersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to monster_url(@monster)
   end
 
-  test "should destroy monster" do
+  test 'should destroy monster' do
     assert_difference('Monster.count', -1) do
       delete monster_url(@monster)
     end

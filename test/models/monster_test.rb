@@ -3,7 +3,7 @@ require 'test_helper'
 class MonsterTest < ActiveSupport::TestCase
   fixtures :monsters
 
-  test "ability score hash should return the correct values" do
+  test 'ability score hash should return the correct values' do
     monster = monsters(:humanoid)
     scores = monster.ability_scores
     assert_equal scores[:str], 1
