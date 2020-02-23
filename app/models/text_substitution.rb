@@ -51,6 +51,11 @@ module TextSubstitution
       "#{$1}%"
     end
 
+    # ignore filter logic for now
+    doc.gsub!(/{@filter (.*?)\|(.*?)}/) do
+      $1
+    end
+
     doc
   end
 
