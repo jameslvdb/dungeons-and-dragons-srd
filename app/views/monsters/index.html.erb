@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Monsters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>CR</th>
+      <th>AC</th>
+      <th>HP</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monsters.each do |monster| %>
+      <tr>
+        <td><%= link_to monster.name.titleize, monster_path(monster) %></td>
+        <td><%= monster.challenge %></td>
+        <td><%= render_armor(monster.ac) %></td>
+        <td><%= monster.hp %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monster', new_monster_path %>

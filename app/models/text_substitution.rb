@@ -2,7 +2,7 @@ module TextSubstitution
 
   def self.format(doc)
     # format damage and dice notations
-    doc.gsub!(/{@(damage|dice) (\d{1,2}d\d{1,3}( *\+ *)?\w*)}/) do
+    doc.gsub!(/{@(damage|dice) (\d{1,2}d\d{1,3}( *[\+\-] *)?\w*)}/) do
   	  "#{$2}"
     end
 
@@ -12,6 +12,11 @@ module TextSubstitution
     # format to-hit bonus
     doc.gsub!(/{@hit (\d{1,})}/) do
       "+#{$1}"
+    end
+
+    # format DC declarations
+    doc.gsub!(/{@dc (\d{1,2})}/) do
+      "DC #{$1}"
     end
 
     # format attack type descriptions
@@ -28,6 +33,10 @@ module TextSubstitution
     # format ability recharge notation
     doc.gsub!(/{@recharge (\d)}/) do
       "(Recharge #{$1}-6)"
+    end
+
+    doc.gsub!(/{@recharge}/) do
+      "(Recharge 6)"
     end
 
     doc

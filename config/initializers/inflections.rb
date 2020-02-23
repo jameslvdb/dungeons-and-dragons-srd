@@ -18,4 +18,6 @@
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.uncountable 'armor'
   inflect.acronym 'AC'
+  inflect.acronym 'HP'
+  inflect.acronym 'CR'
 end

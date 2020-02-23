@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_011739) do
+ActiveRecord::Schema.define(version: 2020_01_27_025308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,37 @@ ActiveRecord::Schema.define(version: 2020_01_26_011739) do
   create_table "conditions", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "monsters", force: :cascade do |t|
+    t.string "name"
+    t.string "size"
+    t.string "monster_type"
+    t.string "alignment"
+    t.string "ac"
+    t.integer "hp"
+    t.string "hp_formula"
+    t.string "speed"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.string "saving_throws"
+    t.string "skills"
+    t.string "damage_resistances"
+    t.string "damage_immunities"
+    t.string "condition_immunities"
+    t.string "senses"
+    t.string "languages"
+    t.string "challenge"
+    t.string "traits"
+    t.string "actions"
+    t.string "legendary_actions"
+    t.string "spellcasting"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

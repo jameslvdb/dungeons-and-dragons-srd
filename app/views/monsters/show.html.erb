@@ -1,0 +1,106 @@
+<p id="notice"><%= notice %></p>
+
+<div class="small_width">
+  <h1><%= @monster.name.titleize %></h1>
+
+  <p>
+    <em><%= render_size_type_alignment(@monster) %></em>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Armor Class:</strong> <%= render_armor(@monster.ac) %>
+    <br>
+    <strong>Hit Points:</strong> <%= render_hp(@monster) %>
+    <br>
+    <strong>Speed:</strong> <%= @monster.speed %>
+  </p>
+
+  <table class="monster_stats">
+    <tr>
+      <th>STR</th>
+      <th>DEX</th>
+      <th>CON</th>
+      <th>INT</th>
+      <th>WIS</th>
+      <th>CHA</th>
+    </tr>
+    <tr>
+      <% @monster.ability_scores.each do |ability, value| %>
+        <td><%= ability(value) %></td>
+      <% end %>
+    </tr>
+  </table>
+
+  <hr class="red_triangle">
+
+  <p class="red_text">
+    <% if @monster.saving_throws %>
+      <strong>Saving Throws:</strong>
+      <%= @monster.saving_throws %>
+      <br>
+    <% end %>
+
+    <% if @monster.skills %>
+      <strong>Skills:</strong>
+      <%= @monster.skills %>
+      <br>
+    <% end %>
+
+    <% unless @monster.damage_immunities.nil? %>
+      <strong>Damage Immunities:</strong>
+      <%= @monster.damage_immunities %>
+      <br>
+    <% end %>
+
+    <% unless @monster.damage_resistances.nil? %>
+      <strong>Resistances:</strong>
+      <%= @monster.damage_resistances %>
+      <br>
+    <% end %>
+
+    <% unless @monster.condition_immunities.nil? %>
+      <strong>Condition Immunities:</strong>
+      <%= @monster.condition_immunities %>
+      <br>
+    <% end %>
+
+    <strong>Senses:</strong>
+    <%= @monster.senses %>
+    <br>
+
+    <strong>Languages:</strong>
+    <%= @monster.languages %>
+    <br>
+
+    <strong>Challenge:</strong>
+    <%= @monster.challenge || '-' %>
+  </p>
+
+  <% if !@monster.traits.empty? || @monster.spellcasting %>
+    <hr class="red_triangle">
+  <% end %>
+
+  <% if !@monster.traits.empty? %>
+    <%= sanitize substitute_links(@monster.traits), scrubber: PermitTableScrubber.new %>
+  <% end %>
+
+  <% if @monster.spellcasting %>
+    <%= sanitize substitute_links(@monster.spellcasting), scrubber: PermitTableScrubber.new %>
+    <br>
+  <% end %>
+  <h2>Actions</h2>
+  <%= sanitize substitute_links(@monster.actions), scrubber: PermitTableScrubber.new %>
+  <br>
+  <% if !@monster.legendary_actions.empty? %>
+    <h2>Legendary Actions</h2>
+    <%= sanitize substitute_links(@monster.legendary_actions), scrubber: PermitTableScrubber.new %>
+    <br>
+  <% end %>
+
+  <br>
+
+  <%= link_to 'Edit', edit_monster_path(@monster) %> |
+  <%= link_to 'Back', monsters_path %>
+</div>
