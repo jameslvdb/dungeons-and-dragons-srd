@@ -2,7 +2,7 @@ module TextSubstitution
 
   def self.format(doc)
     # format damage and dice notations
-    doc.gsub!(/{@(damage|dice) (\d{1,2}d\d{1,3}( *[\+\-] *)?\w*)}/) do
+    doc.gsub!(/{@(damage|dice) (\d{1,2}d\d{1,3}( *[\+\-\×] *)?\w*)}/) do
   	  $2
     end
     doc.gsub!(/{@dice (d\d{1,3})}/) do
