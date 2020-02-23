@@ -27,11 +27,11 @@ humanoid:
   actions: MyString
   legendary_actions: MyString
 
-two:
+demon:
   name: MyString
-  size: MyString
-  monster_type: MyString
-  alignment: neutral
+  size: large
+  monster_type: demon
+  alignment: chaotic evil
   ac: MyString
   hp: 1
   hp_formula: MyString

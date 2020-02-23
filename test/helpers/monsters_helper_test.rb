@@ -5,4 +5,9 @@ class MonstersHelperTest < ActionView::TestCase
     monster = monsters(:humanoid)
     assert_equal 'medium humanoid, lawful good', render_size_type_alignment(monster)
   end
+
+  test "should return 'large demon, chaotic evil'" do
+    monster = monsters(:demon)
+    assert_equal 'large demon, chaotic evil', render_size_type_alignment(monster)
+  end
 end
