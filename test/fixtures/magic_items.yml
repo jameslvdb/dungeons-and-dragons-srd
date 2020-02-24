@@ -6,8 +6,8 @@ one:
   wondrous: false
   weight: 1.5
   tier: MyString
-  rarity: MyString
-  attunement: MyString
+  rarity: rare
+  attunement: 'true'
   description: MyString
 
 two:
