@@ -5,7 +5,6 @@ module MagicItemsHelper
     result << item.item_type
     result << "wondrous item" if item.wondrous
     result << item.rarity.downcase
-    puts result.inspect
     result = result.delete_if { |str| str.empty? }
     result = result.join(', ')
 

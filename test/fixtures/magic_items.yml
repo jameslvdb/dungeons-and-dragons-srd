@@ -2,6 +2,7 @@
 
 one:
   name: MyString
+  item_type: Armor
   wondrous: false
   weight: 1.5
   tier: MyString
@@ -11,6 +12,7 @@ one:
 
 two:
   name: MyString
+  item_type: Weapon
   wondrous: false
   weight: 1.5
   tier: MyString
