@@ -2,7 +2,8 @@ class Armor < ApplicationRecord
   ARMOR_TYPES = {
     'LA' => 'light',
     'MA' => 'medium',
-    'HA' => 'heavy'
+    'HA' => 'heavy',
+    'S' => 'shield'
   }
 
   validates :name, :armor_type, :ac, :strength_requirement, :weight, :value, :description, presence: true

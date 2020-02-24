@@ -10,7 +10,7 @@ class ArmorControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'h1', 'Armor'
 
-    column_headers = ['Name', 'Cost', 'Armor Class (AC)', 'Strength', 'Stealth', 'Weight']
+    column_headers = ['Name', 'Cost', 'Armor Class (AC)', 'Strength', 'Stealth', 'Weight', 'Name', 'Rarity']
     column_headers.each do |header|
       assert_select 'th', header
     end

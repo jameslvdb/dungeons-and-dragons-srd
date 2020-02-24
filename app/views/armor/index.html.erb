@@ -32,6 +32,20 @@
   </tbody>
 </table>
 
+<h1>Magic Armor</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rarity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: "magic_armor", locals: {armor: @magic_armor} %>
+  </tbody>
+</table>
+
 <br>
 
 <%= link_to 'New Armor', new_armor_path %>
