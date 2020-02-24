@@ -1,0 +1,6 @@
+<% armor.each do |armor| %>
+  <tr>
+    <td><%= link_to armor.name.titleize, magic_item_path(armor) %></td>
+    <td><%= armor.rarity %></td>
+  </tr>
+<% end %>

@@ -5,6 +5,7 @@ class ArmorController < ApplicationController
   # GET /armor.json
   def index
     @armor = Armor.all
+    @magic_armor = MagicItem.armor.sort_by(&:name)
   end
 
   # GET /armor/1
