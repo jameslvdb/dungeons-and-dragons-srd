@@ -16,6 +16,24 @@ def attunement(item)
   return item['reqAttune']
 end
 
+def get_item_type(item)
+  armor_values = %w[HA MA LA S]
+  weapon_values = %w[M R]
+
+  item_type = ""
+
+  if armor_values.include? item['type']
+    item_type << 'Armor'
+    item_type << ' (plate)' if item['baseItem']&.start_with?('plate')
+    item_type << ' (shield)' if item['type'] == 'S'
+    item_type << ' (scale mail)' if item['name'].downcase.include? 'scale mail'
+  elsif weapon_values.include? item['type']
+    item_type << "Weapon (#{item['baseItem'].split('|').first})"
+  end
+
+  item_type
+end
+
 def format_description(item)
   description = ''
   if item['entries'].length > 1
@@ -32,6 +50,7 @@ items.each do |i|
   next if i['rarity'] == 'None'
   item = MagicItem.find_or_initialize_by(name: i['name'].downcase)
   item.wondrous = wondrous?(i)
+  item.item_type = get_item_type(i)
   item.weight = i['weight']
   item.tier = i['tier']
   item.rarity = i['rarity']
